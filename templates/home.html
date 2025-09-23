@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} home page {% endblock title %}
+
+
+{% block content %}
+
+
+        <div class="row mt-3">
+        {% for p in product_list %}
+        <div class="col-md-3">
+            <h4><a href="{% url 'kvapp:productsdetails' p.slug %}">{{ p.title }}</a></h4>
+            <a href="{% url 'kvapp:productsdetails' p.slug %}">
+                <img src="{{ p.image.url }}" class="img-fluid" style="height:2500; object-fit:cover;"  alt=""></a>
+            <p>Price: <strike>Tk{{ p.market_price }}</strike>Tk{{p.salling_price}}</p>
+            <a class="btn btn-primary" href="#">Add To Cart</a>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+{% endblock content %}

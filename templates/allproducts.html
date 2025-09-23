@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} all-products page {% endblock title %}
+
+
+{% block content %}
+
+
+      <h2>All Products</h2>
+    {% for cat in allcategories %}
+    <h4><a href="">{{ cat.title }}</a></h4>
+    <div class="row">
+         {% for p in cat.product_set.all %}
+        <div class="col-md-3">
+            <h3>{{ p.title }}</h3>
+            <img src="{{ p.image.url }}" class="img-fluid" style="height:2500; object-fit:cover;"  alt="">
+            <p>Price: <strike>Tk{{ p.market_price }}</strike>Tk{{p.salling_price}}</p>
+            <a class="btn btn-primary" href="#">Add To Cart</a>
+        </div>
+        {% endfor %}
+
+    </div>
+    {% endfor %}
+
+
+
+{% endblock content %}

@@ -1,6 +1,6 @@
 
 from django.urls import path
-from .views import HomeView,AboutView,ContactView, AllProductsView,ProductDetailsView
+from .views import *
 
 app_name= 'kvapp'
 
@@ -10,5 +10,6 @@ urlpatterns = [
     path('contact/', ContactView.as_view(), name='contact'),
     path('all-products/',AllProductsView.as_view(), name='all-products'),
     path('product/<slug:slug>/',ProductDetailsView.as_view(), name='productsdetails'),
+    path( 'add-to-cart-<int:pro_id>/',AddToCartView.as_view(), name='addtocart' ),
 
 ]

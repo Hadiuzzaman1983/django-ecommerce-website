@@ -13,20 +13,23 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'kvapp:about'%}">About</a>
       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'kvapp:all-products'%}">Categories</a>
+      </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="{% url 'kvapp:all-products'%}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categories
         </a>
 
          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          {% for cat in allcategories %}
-          <a class="dropdown-item" href="{% url 'kvapp:all-products'%}">{{ cat.title }}</a>
-          {% endfor %}
+
+          <a class="dropdown-item" href="#"></a>
+
         </div>
 
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'kvapp:contact'%} slug=slug">Contact</a>
+        <a class="nav-link" href="{% url 'kvapp:contact'%}">Contact</a>
       </li>
     </ul>
     <form class="form-inline my-4 my-lg-0">

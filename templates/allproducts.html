@@ -15,7 +15,7 @@
             <h3>{{ p.title }}</h3>
             <img src="{{ p.image.url }}" class="img-fluid" style="height:2500; object-fit:cover;"  alt="">
             <p>Price: <strike>Tk{{ p.market_price }}</strike>Tk{{p.salling_price}}</p>
-            <a class="btn btn-primary" href="#">Add To Cart</a>
+            <a href="{% url 'kvapp:addtocart' p.id %}" class="btn btn-primary" href="#">Add To Cart</a>
         </div>
         {% endfor %}
 

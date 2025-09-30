@@ -12,10 +12,10 @@
         </div>
 
         <div class="col-md-6">
-            <h4>{{product.title}} (viewd: {{ product.view_count }} times)</h4>
+            <h4>{{product.title}} (viewed: {{ product.view_count }} times)</h4>
             <h5>Category: {{ product.category }}</h5>
             <h5>Price: <strike>Tk{{ product.market_price }}</strike> Tk{{product.salling_price }}</h5>
-            <a class="btn btn-info" href="">Add To Cart</a>
+            <a class="btn btn-info" href="{% url 'kvapp:addtocart' product.id %}">Add To Cart</a>
             <p>Warrinty: {{ product.warranty}}</p>
             <p>Return Policy: {{product.return_policy}}</p>
             <hr>
